@@ -11,6 +11,7 @@ from django.contrib.staticfiles.storage import staticfiles_storage
 from datetime import date
 from dash.dependencies import Input, Output
 import sqlite3
+import pdfkit
 
 app = DjangoDash('activity', external_stylesheets=[dbc.themes.BOOTSTRAP])
 
@@ -81,8 +82,8 @@ df_user.reset_index(inplace=True)
 df_user_home = home_df[['steps', 'user']].groupby('user').sum()
 df_user_home.reset_index(inplace=True)
 
-fig_weekly = px.bar(x = df_user_home['user'].astype(str), y=df_user_home['steps'], barmode='group')
-fig_weekly.add_bar(x = df_user['user'].astype(str), y=df_user['steps'], name='Total steps by school week')
+fig_weekly = px.bar(x = df_user_home['user'].astype(str), y=df_user_home['steps'], barmode='group', title="Total steps by user")
+fig_weekly.add_bar(x = df_user['user'].astype(str), y=df_user['steps'], name='School week')
 
 
 app.layout = html.Div([
