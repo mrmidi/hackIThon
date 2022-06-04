@@ -3,6 +3,6 @@ from . import views
 #from dash_apps import activity
 
 urlpatterns = [
-    path('', views.blank, name='hello_world'),
+    path('', views.activity, name='activity'),
     path('activity/', views.activity, name='activity')
 ]
