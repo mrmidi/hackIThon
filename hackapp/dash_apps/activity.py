@@ -53,7 +53,7 @@ home_df = pd.read_csv('static/data/data_home.csv', parse_dates=['datetime'])
 
 school_df = pd.read_csv('static/data/data_school.csv', parse_dates=['datetime'])
 
-sched_df = pd.read_csv('schedule.csv')
+sched_df = pd.read_csv('static/data/schedule.csv')
 sched_df['zacatek'] = pd.to_datetime(sched_df['from'], format='%H:%M')
 sched_df['konec'] = pd.to_datetime(sched_df['to'], format='%H:%M')
 del sched_df['from'], sched_df['to']
