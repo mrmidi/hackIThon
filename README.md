@@ -20,3 +20,4 @@ APP_PORT=8000
 ```
 2. docker-compose build
 3. docker-compose up
+4. Open http://localhost in your browser
